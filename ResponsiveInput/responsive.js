@@ -1,7 +1,7 @@
 /** 
- * var1: Object[input]
- * var2: Object[select]
- * var3: boolean
+ * param: Object[input]
+ *        Object[select]
+ *        boolean
 */
 function responsiveDropdown(inputText, select, isDirectInput) {
     inputText.value = select.value;
@@ -12,8 +12,8 @@ function responsiveDropdown(inputText, select, isDirectInput) {
     }
 }
 /** 
- * var1: Object[input]
- * var2: STRING or INT
+ * param: Object[input]
+ *        STRING or INT
 */
 function checkLengthMax(obj, max) {
     var target = obj.value;
@@ -22,5 +22,22 @@ function checkLengthMax(obj, max) {
     if(target.length > max) {
         target = target.substring(0,max);
         obj.value = target;
+    }
+}
+
+/** 
+ * param: Object[input[type=checkbox]]
+*/
+function checkAllFnc(checkAll) {
+    var checkboxList = $('input[type=checkbox]');
+
+    if (checkAll.checked) {
+        $.each(checkboxList, function (i, checkbox) {
+            if (i != 0) checkbox.checked = true;
+        })
+    } else {
+        $.each(checkboxList, function (i, checkbox) {
+            if (i != 0) checkbox.checked = false;
+        })
     }
 }
