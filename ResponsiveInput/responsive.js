@@ -12,8 +12,9 @@ function responsiveDropdown(inputText, select, isDirectInput) {
     }
 }
 /** 
- * param: Object[input]
+ * @param: Object[input]
  *        STRING or INT
+ * @author: moon497@edkim.co
 */
 function checkLengthMax(obj, max) {
     var target = obj.value;
@@ -22,6 +23,19 @@ function checkLengthMax(obj, max) {
     if(target.length > max) {
         target = target.substring(0,max);
         obj.value = target;
+    }
+}
+
+/** 
+ * @param: Object[input]
+ *         INT
+ * @author: moon497@edkim.co
+*/
+function checkMax(obj, max) {
+    var target = obj.value;
+
+    if(target > max) {
+        obj.value = max;
     }
 }
 
